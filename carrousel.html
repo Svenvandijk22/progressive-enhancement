@@ -1,50 +1,176 @@
 <!doctype html>
 <html lang="nl">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title>Carrousel / Progressive Enhancement / FDND</title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-		<link href="assets/styles.css" rel="stylesheet">
-		<style>
-			/* Hint: welk layout model is handig om content naast elkaar te zetten? */
-		</style>
-		<script type="module">
-			/* Schrijf hier eventueel je client-side JavaScript */
-		</script>
-	</head>
-	<body>
-		<h1>Carrousel</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Carrousel / Progressive Enhancement / FDND</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="assets/styles.css" rel="stylesheet" />
+    <style>
+      .carrousel {
+        display: flex;
+        overflow-x: auto;
+        
+        padding: 0;
+        list-style: none;
+        scroll-snap-type: x mandatory;
+        height: 700px;
+        width: 80%;
+      }
+
+      .carrousel li {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+      }
+
+      .een-carrousel {
+        background-color: #9a69f2;
+
+        p {
+			padding-top: 120px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
 
 
-	
+	    .twee-carrousel {
+        background-color: #FDFB79;
 
-		<section>
-  <ul>
-    <li>
-      <p>“Websites leren bouwen, én praktijkervaring opdoen?”</p>
-    </li>
-    <li>
-      <p>“FDND is de enige HBO-opleiding voor Frontend Development in Nederland, in twee jaar stomen wij jou klaar voor het werkveld”</p>
-    </li>
-    <li>
-      <p>“Je werkt bij ons aan échte projecten voor échte opdrachtgevers”</p>
-    </li>
-    <li>
-      <p>“In het studiomodel werken studenten onder begeleiding van coaches en experts uit het vakgebied aan praktijkgerichte opdrachten”</p>
-    </li>
-    <li>
-      <p>“Bij FDND leer je websites bouwen en andere belangrijke skills die jij in de praktijk toe kan passen”</p>
-    </li>
-    <li>
-      <p>“Een Associate degree-opleiding is een tweejarige hbo-opleiding op niveau 5”</p>
-    </li>
-  </ul>
-</section>
+        p {
+			padding-top: 20px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
 
+	  
+	    .drie-carrousel {
+        background-color: #5AE0B5;
 
+        p {
+			padding-top: 100px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
 
-<!-- Content: 
+	  .vier-carrousel {
+        background-color:  #9a69f2;
+
+        p {
+			padding-top: 20px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
+
+	   .vijf-carrousel {
+        background-color:  #FDFB79;
+
+        p {
+		  padding-top: 70px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
+
+	    .zes-carrousel {
+        background-color: #5AE0B5;
+
+        p {
+		  padding-top: 70px;
+          font-size: 50px;
+		  text-align: center;
+		  font-weight: 800;
+		  padding-left: 15px;
+		  padding-right: 15px;
+        }
+      }
+
+	  .carrousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carrousel::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.carrousel::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
+
+.carrousel::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+      /* Hint: welk layout model is handig om content naast elkaar te zetten? */
+    </style>
+    <script type="module">
+      /* Schrijf hier eventueel je client-side JavaScript */
+    </script>
+  </head>
+  <body>
+    <h1>Carrousel</h1>
+
+    <section>
+      <ul class="carrousel">
+        <li class="een-carrousel">
+          <p>“Websites leren bouwen, én praktijkervaring opdoen?”</p>
+        </li>
+        <li class="twee-carrousel">
+          <p>
+            “FDND is de enige HBO-opleiding voor Frontend Development in
+            Nederland, in twee jaar stomen wij jou klaar voor het werkveld”
+          </p>
+        </li>
+        <li class="drie-carrousel">
+          <p>
+            “Je werkt bij ons aan échte projecten voor échte opdrachtgevers”
+          </p>
+        </li>
+        <li class="vier-carrousel">
+          <p>
+            “In het studiomodel werken studenten onder begeleiding van coaches
+            en experts uit het vakgebied aan praktijkgerichte opdrachten”
+          </p>
+        </li>
+        <li class="vijf-carrousel">
+          <p>
+            “Bij FDND leer je websites bouwen en andere belangrijke skills die
+            jij in de praktijk toe kan passen”
+          </p>
+        </li>
+        <li class="zes-carrousel">
+          <p>
+            “Een Associate degree-opleiding is een tweejarige hbo-opleiding op
+            niveau 5”
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Content: 
 
 
 		
@@ -63,11 +189,18 @@
 
 		-->
 
-		<details open>
-			<summary>Demo video</summary>
-			<video src="assets/carrousel.mp4" width="1298" height="469" controls muted loop>
-				<a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
-			</video>
-		</details>
-	</body>
+    <details open>
+      <summary>Demo video</summary>
+      <video
+        src="assets/carrousel.mp4"
+        width="1298"
+        height="469"
+        controls
+        muted
+        loop
+      >
+        <a href="assets/carrousel.mp4">assets/carrousel.mp4</a>
+      </video>
+    </details>
+  </body>
 </html>
