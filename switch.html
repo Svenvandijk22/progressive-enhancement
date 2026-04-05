@@ -27,6 +27,7 @@ input{
 --radius:1.5em;
 --padding:.3em;
 --radius:1.5em;
+
 appearance: none;
 width: var(--width);
 height:var(--height) ;
@@ -65,6 +66,24 @@ transition: inherit;
 	border-radius:calc( var(--radius) var(--padding));
 
 }
+
+&:checked{
+
+	background-color: var(--on-color);
+	background-position: left;
+}
+
+&:checked::before{
+
+	content: "aan";
+	translate: 2em;
+	rotate: 90deg;
+}
+	}
+
+
+
+		
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
