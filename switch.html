@@ -16,6 +16,17 @@ display: flex;
 align-items: center;
 gap: .5em;
 }
+input:focus{
+
+	outline-color: aqua ;
+}
+input{
+
+--width:8em;
+--height:5em;
+--radius:1.5em;
+--padding:.3em;
+--radius:1.5em;
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
@@ -25,6 +36,12 @@ gap: .5em;
 	</head>
 	<body>
 		<h1>Switch control</h1>
+		<label for="switchinput">
+
+			 ik ben een switch
+		</label>
+		<input id="switchinput"
+		 type="checkbox" switch>
 		
 		<!-- Hint: Safari heeft hiervoor iets bedacht, maar is dat al een standaard?
 		     Wat gebeurt er in browsers die dat nog niet ondersteunen? -->
