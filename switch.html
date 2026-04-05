@@ -47,6 +47,24 @@ border-radius: 1em;
 	transition: 0.5s;
 }
 
+&::before{
+
+	display: grid;
+	align-items: center;
+	justify-items: center;
+
+place-items: center;
+
+transition: inherit;
+
+	content: "uit";
+	background-color: white;
+	display: block;
+	height: 100%;
+	aspect-ratio: 1/1;
+	border-radius:calc( var(--radius) var(--padding));
+
+}
 			/* Schrijf hier gewoon je CSS voor dit component */
 
 			/* Hint: Dit component kun je volledig met HTML en CSS bouwen */
