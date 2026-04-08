@@ -10,130 +10,183 @@
     />
     <link href="assets/styles.css" rel="stylesheet" />
     <style>
-      .carrousel {
-        display: flex;
-        overflow-x: auto;
-        
-        padding: 0;
-        list-style: none;
-        scroll-snap-type: x mandatory;
-        height: 700px;
-        width: 80%;
-      }
+     .wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  width: 80%;
+}
 
-      .carrousel li {
-        flex: 0 0 80%;
-        scroll-snap-align: start;
-      }
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.carrousel {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+.carrousel li {
+  flex: 0 0 100%;
+  height: 700px;
+}
 
       .een-carrousel {
         background-color: #9a69f2;
 
         p {
-			padding-top: 120px;
+          padding-top: 120px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-
-	    .twee-carrousel {
-        background-color: #FDFB79;
+      .twee-carrousel {
+        background-color: #fdfb79;
 
         p {
-			padding-top: 20px;
+          padding-top: 20px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-	  
-	    .drie-carrousel {
-        background-color: #5AE0B5;
+      .drie-carrousel {
+        background-color: #5ae0b5;
 
         p {
-			padding-top: 100px;
+          padding-top: 100px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-	  .vier-carrousel {
-        background-color:  #9a69f2;
+      .vier-carrousel {
+        background-color: #9a69f2;
 
         p {
-			padding-top: 20px;
+          padding-top: 20px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-	   .vijf-carrousel {
-        background-color:  #FDFB79;
+      .vijf-carrousel {
+        background-color: #fdfb79;
 
         p {
-		  padding-top: 70px;
+          padding-top: 70px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-	    .zes-carrousel {
-        background-color: #5AE0B5;
+      .zes-carrousel {
+        background-color: #5ae0b5;
 
         p {
-		  padding-top: 70px;
+          padding-top: 70px;
           font-size: 50px;
-		  text-align: center;
-		  font-weight: 800;
-		  padding-left: 15px;
-		  padding-right: 15px;
+          text-align: center;
+          font-weight: 800;
+          padding-left: 15px;
+          padding-right: 15px;
         }
       }
 
-	  .carrousel::-webkit-scrollbar {
-  height: 8px;
-}
+      .carrousel::-webkit-scrollbar {
+        height: 8px;
+      }
 
-.carrousel::-webkit-scrollbar-track {
-  background: #eee;
-  border-radius: 10px;
-}
+      .carrousel::-webkit-scrollbar-track {
+        background: #eee;
+        border-radius: 10px;
+      }
 
-.carrousel::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 10px;
-}
+      .carrousel::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+      }
 
-.carrousel::-webkit-scrollbar-thumb:hover {
-  background: #666;
-}
+      .carrousel::-webkit-scrollbar-thumb:hover {
+        background: #666;
+      }
 
       /* Hint: welk layout model is handig om content naast elkaar te zetten? */
     </style>
     <script type="module">
+
+		const carousel = document.querySelector('.carrousel');
+const items = document.querySelectorAll('.carrousel li');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+let index = 0;
+
+// knoppen zichtbaar maken (enhancement)
+next.hidden = false;
+prev.hidden = false;
+
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
+
+next.addEventListener('click', () => {
+  if (index < items.length - 1) {
+    index++;
+    updateCarousel();
+  }
+});
+
+prev.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    updateCarousel();
+  }
+});
       /* Schrijf hier eventueel je client-side JavaScript */
     </script>
   </head>
   <body>
     <h1>Carrousel</h1>
 
-    <section>
+    <section class="wrapper">
+      <button class="prev" hidden>←</button>
+
       <ul class="carrousel">
         <li class="een-carrousel">
           <p>“Websites leren bouwen, én praktijkervaring opdoen?”</p>
@@ -168,6 +221,8 @@
           </p>
         </li>
       </ul>
+
+      <button class="next" hidden>→</button>
     </section>
 
     <!-- Content: 
