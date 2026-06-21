@@ -7,10 +7,20 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
-			/* Schrijf hier gewoon je CSS voor dit component */
+		.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
 
 			/* Hint: kijk eens naar :target
 			   https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+.menu-open {
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
