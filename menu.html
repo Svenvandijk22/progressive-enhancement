@@ -70,6 +70,15 @@
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
+.menu-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+}
+
+.menu-toggle:checked ~ .menu-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
 		</style>
 		<script type="module">
 			/* Schrijf hier eventueel je client-side JavaScript */
